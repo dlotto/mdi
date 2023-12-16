@@ -155,9 +155,10 @@ home <- function(input, output, session, login_info) {
   # Weather ----
   
   output$weather <- renderUI({
-    dark.base1 <- "https://forecast.io/embed/#"
-    call.dark1 <- paste(dark.base1, "lat=", login_info()$lat, "&lon=", login_info()$long, "&name=", login_info()$loc, sep="")
-    tags$iframe(src=call.dark1, width= "100%", height= 230, frameborder= 0)
+    # dark.base1 <- "https://forecast.io/embed/#"
+    dark.base1 <- "https://merrysky.net/"
+    # call.dark1 <- paste(dark.base1, "lat=", login_info()$lat, "&lon=", login_info()$long, "&name=", login_info()$loc, sep="")
+    tags$iframe(src="https://images.squarespace-cdn.com/content/v1/63026b41ce69c14fc69dbf89/f53b46b7-57ad-4846-a62f-611b85a3ea03/Mae+Davis+%2810%29.jpg", width= "100%", height= 230, frameborder= 0)
   })
   
   # Stack Overflow ----
@@ -387,7 +388,7 @@ home <- function(input, output, session, login_info) {
   
   # Data Science Feeds ----
   
-  dsfeed_list <- reactiveVal(c("reddit","kdnuggets","kaggle","R_MLlist","rbloggers"))
+  dsfeed_list <- reactiveVal(c("reddit","kdnuggets","kaggle","rbloggers"))
   dsfeed <- reactiveVal()
   
   observe({

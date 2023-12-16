@@ -22,7 +22,7 @@ login <- function(input, output, session) {
         tags$script(
           HTML(paste0('
       $(document).keyup(function(event) {
-        if ($("#login-user_name,#login-user_zip").is(":focus") && (event.key == "Enter")) {
+        if ($("#login-user_name").is(":focus") && (event.key == "Enter")) {
           $("#login-login_button").click();
         }
       });
@@ -37,8 +37,8 @@ login <- function(input, output, session) {
                                
                                div(style = 'text-align: center; padding-top: 15px;',
                                    htmlOutput(session$ns("github_img")),
-                                   div(style = 'padding-top: 5px; font-size: 20px;',
-                                       htmlOutput(session$ns("zip_location")))
+                                   # div(style = 'padding-top: 5px; font-size: 20px;',
+                                   #     htmlOutput(session$ns("zip_location")))
                                ),
                                
                                hr(),
@@ -49,13 +49,6 @@ login <- function(input, output, session) {
                                             shinyWidgets::textInputIcon(session$ns("user_name"), label = NULL, placeholder = "Choose a Username", icon = icon("user-astronaut"))),
                                      column(3, shinyBS::bsButton(session$ns("q_name"), label = "", icon = icon("question-circle", class = 'question-mark'), style = "default", size = "extra-small")),
                                      bsTooltip(id = session$ns("q_name"), "Enter your GitHub username to use that avatar.", placement = "right", trigger = "click", options = NULL)
-                                   ),
-                                   
-                                   fluidRow(
-                                     column(9, style = 'padding-right: 0;',
-                                            shinyWidgets::textInputIcon(session$ns("user_zip"), label = NULL, placeholder = "Zip Code", icon = icon("globe-americas"))),
-                                     column(3, shinyBS::bsButton(session$ns("q_zip"), label = "", icon = icon("question-circle", class = 'question-mark'), style = "default", size = "extra-small")),
-                                     bsTooltip(id = session$ns("q_zip"), "Only used to show a weather forecast and display your city.", placement = "right", trigger = "click", options = NULL)
                                    )
                                ),
                                
@@ -100,11 +93,8 @@ login <- function(input, output, session) {
 
   img_data <- eventReactive(input$user_name, {
     
-    if (!InputCheck(input$user_name, "git")) {
-      'github_pic.png'
-    } else {
-      paste0('https://github.com/',input$user_name,'.png')
-    }
+    'https://images.squarespace-cdn.com/content/v1/63026b41ce69c14fc69dbf89/1672977362237-N0ZXEZJAEH3AXZENLC48/Mae+Davis+%2812%29.png'
+    
   })
   
   
@@ -118,61 +108,6 @@ login <- function(input, output, session) {
     
     paste0('<a href="https://github.com/join?source=header-home" target="_blank">Join GitHub</a>')
   })
-  
-  # Gets city name and lat/long for zip
-  zip_data <- eventReactive(input$user_zip, {
-    
-    if (!InputCheck(input$user_zip, "zip")) {
-      return(NULL)
-    } else {
-      input$user_zip %>%
-        paste0('http://www.geonames.org/postalcode-search.html?q=',.,'&country=US') %>%
-        read_html() %>%
-        html_nodes(.,'tr:nth-child(2) td:nth-child(2) , tr:nth-child(3) small') %>%
-        html_text() %>%
-        trimws()
-    }
-  })
-  
-  # If user does not input a zip then a random one is selected
-  no_zip_data <- eventReactive(input$user_zip, {
-    
-    read_html('https://phaster.com/zip_code.html') %>%
-        html_nodes(.,'tr+ tr td~ td+ td font') %>%
-        html_text() %>%
-        gsub("thru.*","",.) %>%
-        gsub("-.*","",.) %>%
-        trimws() %>%
-        .[! . %in% c("02101","87500")] %>% #returns 'no rows' from geonames
-        sample(.,1) %>%
-        paste0('http://www.geonames.org/postalcode-search.html?q=',.,'&country=US') %>%
-        read_html() %>%
-        html_nodes(.,'tr:nth-child(2) td:nth-child(2) , tr:nth-child(3) small') %>%
-        html_text() %>%
-        trimws()
-  })
-  
-  login_zip_data <- eventReactive(input$user_zip, {
-    
-    if(input$user_zip == ""){
-      no_zip_data()
-    } else {
-      zip_data()
-    }
-  })
-  
-  
-  observeEvent(input$user_zip, {
-    
-    output$zip_location <- renderText({
-      req(zip_data())
-      shiny::validate(
-        need(input$user_zip != "", "Enter Zip Code")
-      )
-      paste0(zip_data()[1])
-    })
-  })
-  
 
   observeEvent(input$login_button, {
     
@@ -188,9 +123,6 @@ login <- function(input, output, session) {
     } else {
       credentials$access <- TRUE
       credentials$name <- input$user_name
-      credentials$loc <- if(input$user_zip == "") {no_zip_data()[1]} else {zip_data()[1]}
-      credentials$lat <- if(input$user_zip == "") {gsub("/.*","",no_zip_data()[2])} else {gsub("/.*","",zip_data()[2])}
-      credentials$long <- if(input$user_zip == "") {gsub(".*/","",no_zip_data()[2])} else {gsub(".*/","",zip_data()[2])}
       credentials$img <- img_data()
     }
   })

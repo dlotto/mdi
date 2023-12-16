@@ -1,6 +1,6 @@
 
-ui <- dashboardPage(title = "Shuttle",
-                    header = dashboardHeader(titleWidth = 210, title = tags$a(id="ichooseyou", href = "", class = "action-button shiny-bound-input", tags$img(src='logo.png', width='160', height='38')),
+ui <- dashboardPage(title = "MDI",
+                    header = dashboardHeader(titleWidth = 210, title = tags$a(id="ichooseyou", href = "", class = "action-button shiny-bound-input", tags$text("MDI")),
                                              dropdownMenu(
                                                type = "notifications",
                                                headerText = strong("Quick Help"),
@@ -36,14 +36,14 @@ ui <- dashboardPage(title = "Shuttle",
                       tabItems(
                         tabItem("home_tabname", homeUI("home")),
                         # Gemini
-                        tabItem("geyser1_tabname", geyser1UI("geyser1")),
-                        tabItem("geyser2_tabname", geyser2UI("geyser2")),
+                        # tabItem("geyser1_tabname", geyser1UI("geyser1")),
+                        # tabItem("geyser2_tabname", geyser2UI("geyser2")),
                         tabItem("datatable1_tabname", datatable1UI("datatable1")),
                         tabItem("datatable2_tabname", datatable2UI("datatable2")),
-                        tabItem("timeseries1_tabname", timeseries1UI("timeseries1")),
-                        tabItem("timeseries2_tabname", timeseries2UI("timeseries2")),
-                        tabItem("webscrape1_tabname", webscrape1UI("webscrape1")),
-                        tabItem("webscrape2_tabname", webscrape2UI("webscrape2")),
+                        # tabItem("timeseries1_tabname", timeseries1UI("timeseries1")),
+                        # tabItem("timeseries2_tabname", timeseries2UI("timeseries2")),
+                        # tabItem("webscrape1_tabname", webscrape1UI("webscrape1")),
+                        # tabItem("webscrape2_tabname", webscrape2UI("webscrape2")),
                         # Apollo
                         tabItem("yourtab_tabname", yourtabUI("yourtab"))
                         # Reference your UI here.
@@ -55,10 +55,7 @@ ui <- dashboardPage(title = "Shuttle",
                           HTML(paste0('
             $(document).ready(function() {
               $("header").find("nav").append(\'<span class="links">'
-                                      ,'<a href="https://www.youtube.com/channel/UCHIge2lulmLXhEhWpajOT3Q" target="_blank>"','<i class="fab fa-youtube"></i></a>'
-                                      ,'<a href="https://www.instagram.com/shuttleds/" target="_blank>"','<i class="fab fa-instagram"></i></a>'
-                                      ,'<a href="https://twitter.com/shuttledatasci/" target="_blank>"','<i class="fab fa-twitter"></i></a>'
-                                      ,'<a href="https://github.com/shuttleds" target="_blank>"','<i class="fab fa-github"></i></a>'
+                                      ,'<a href="https://www.instagram.com/shopmaedavis/" target="_blank>"','<i class="fab fa-instagram"></i></a>'
                                       ,'</span>\');
     })
     '))),
