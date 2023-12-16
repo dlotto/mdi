@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+/* Login Settings */
+.welcome-header {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.button-login {
+    background: linear-gradient(#67ae55, #578843);
+    background-color: #69a74e;
+    box-shadow: inset 0 1px 1px #a4e388;
+    border-color: #3b6e22 #3b6e22 #2c5115;
+    font-weight: bold;
+}
+
+.button-login:hover {
+    background: linear-gradient(#79bc64, #578843);
+}
+
+.hr-login {
+  border-top: 1px solid #dddfe2;
+}
+
+/* Header Settings */
+.skin-blue .main-header .logo {
+  background-color: #222d32;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.skin-blue .main-header .logo:hover {
+  background-color: #222d32;
+}
+
+.skin-blue .main-header .navbar {
+  background-color: #222d32;
+}
+
+.skin-blue .main-header .navbar .sidebar-toggle:hover {
+  background-color: #385898;
+}
+
+.skin-blue .main-header .navbar .nav>li>a {
+  font-size: 16px;
+}
+
+.navbar-nav > .messages-menu > .dropdown-menu, .navbar-nav > .notifications-menu > .dropdown-menu, .navbar-nav > .tasks-menu > .dropdown-menu {
+  width: 300px;
+  padding: 0;
+  margin: 10px 20px;
+  top: 100%;
+  background-color: #fefefe;
+  box-shadow: 5px 5px 5px darkgrey;
+}
+
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a {
+    color: #000000;
+    overflow: hidden;
+    white-space: normal;
+}
+
+.youtube-color {
+  color: #c4302b;
+}
+
+
+/* Sidebar Settings */
+.userpanel{
+  text-align: left;
+  margin: auto;
+  width: 90%;
+}
+
+.links {
+  font-size: 20px;
+  color: #f2f2f2;
+  float: left;
+  padding: 0 20px;
+  margin-top: 11px;
+  letter-spacing: 10px;
+}
+
+.links a{
+  color: #f2f2f2;
+}
+
+.links a:hover{
+  color: #FE01B2;
+}
+
+.help {
+  font-size: 20px;
+  color: #f2f2f2;
+  float: right;
+  padding: 0 20px;
+  margin-top: 11px;
+  letter-spacing: 10px;
+}
+
+.skin-blue .main-sidebar .sidebar .sidebar-menu .active a{
+  border-left-color: #FE01B2;
+}
+
+.skin-blue .main-sidebar .sidebar .sidebar-menu .active a:hover{
+  border-left-color: #FE01B2;
+}
+
+.skin-blue .main-sidebar .sidebar .sidebar-menu a:hover{
+  border-left-color: #385898;
+}
+
+.skin-blue .treeview-menu>li.active>a>.fa {
+  color: #FE01B2;
+}
+
+.skin-blue .treeview-menu>li.active>a:hover>.fa {
+  color: #FE01B2;
+}
+
+/* Login Screen */
+.github-img {
+  border-radius: 50%;
+  border: 1px solid #ccd0d5;
+  width: 175px;
+  height: 175px;
+}
+
+.question-mark {
+  font-size: 16px;
+  line-height: unset;
+}
+
+.tooltip.right {
+  width: 150px;
+}
+
+
+/* Home Page Settings */
+.date{
+    text-align: center;
+    background-color: #f2f3f5;
+    border-radius: 15px;
+    border: 1px solid #ccd0d5;
+    padding: 10px 0 10px 10px;
+    color: #1c1e21;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.stock-info-label{
+  font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.header-underline{
+  border-bottom: 1px solid;
+  width: 100%;
+}
+
+.header-underline-scroll{
+  display: flex; 
+  justify-content: space-between;
+  border-bottom: 1px solid;
+  width: 100%;
+}
+
+.header-underline-scroll .shiny-bound-input{
+  font-size: 14px;
+}
+
+.shuttle-box-1{
+  background-color: #FFF;
+  border-radius: 25px;
+  padding: 15px 20px 0 20px;
+  border: 1px solid #dddfe2;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+}
+
+.so-box{
+  padding: 0 15px 0 15px;
+  height: 340px; 
+  max-width: 100%; 
+  overflow-x: hidden;
+}
+
+.gnews1-box{
+  padding: 0 15px 15px 15px;
+  height: 805px; 
+  max-width: 100%; 
+  overflow-x: hidden;
+}
+
+/* Custom Selectize Input Settings for Home Page */
+.home-selectize-input .selectize-input::after{
+  visibility:hidden;
+}
+
+.home-selectize-input-nobox .selectize-input{
+  border: 0;
+  padding: 0;
+  min-height: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.home-selectize-input-nobox .selectize-control{
+  margin-bottom: 0;
+}
+
+.home-selectize-input-nobox .form-group{
+  margin-bottom: 0;
+}
+
+
+/* Welcome Page Settings */
+.home-tab{
+  height: 365px; 
+  max-width: 100%; 
+  overflow-x: hidden; 
+  padding-right: 5px;
+}
+
+.welcome-tab{
+  max-width: 100%; 
+  overflow-x: hidden; 
+  padding-right: 5px;
+}
+
+.nav-tabs-custom{
+  border-radius: 25px;
+  margin-bottom: 0; /* tabBox has a built in margin */
+}
+
+/* Gemini Settings */
+.shuttle-box-2{
+  background-color: #FFF;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  padding: 0 20px 5px 20px;
+  border: 1px solid #dddfe2;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+}
+
+.gemini-font{
+  font-size: 16px;
+}
+
+.gemini-h1 {
+  color: #385898;
+  display: block;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.gemini-h2 {
+  color: #385898;
+  display: block;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.yourtab-body {
+  font-size: 16px;
+  margin: 0 0 20px;
+  padding: 0 20px;
+  display: block;
+}
+
+
+/* Project App Settings */
+.dygraph-legend {
+  left: 70px !important;
+  background-color: transparent !important;
+}
+
+/*Custom Scrollbar Settings*/
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
