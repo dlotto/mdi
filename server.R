@@ -77,22 +77,10 @@ server<- function(input, output, session) {
     if (input$mission %in% c("Gemini"))  { 
       sidebarMenu(id = "tabs",
                   menuItem("Home", tabName = "home_tabname", icon = icon("home"), selected = T),
-                  # menuItem("Plots", icon = icon("chart-bar"),
-                  #          menuSubItem("Geyser 1", tabName = "geyser1_tabname"),
-                  #          menuSubItem("Geyser 2", tabName = "geyser2_tabname")
-                  # ),
                   menuItem("DataTable", icon = icon("table"),
                            menuSubItem("DataTable 1", tabName = "datatable1_tabname"),
                            menuSubItem("DataTable 2", tabName = "datatable2_tabname")
                   )
-                  # menuItem("TimeSeries", icon = icon("chart-line"),
-                  #          menuSubItem("TimeSeries 1", tabName = "timeseries1_tabname"),
-                  #          menuSubItem("TimeSeries 2", tabName = "timeseries2_tabname")
-                  # ),
-                  # menuItem("WebScrape", icon = icon("binoculars"),
-                  #          menuSubItem("WebScrape 1", tabName = "webscrape1_tabname"),
-                  #          menuSubItem("WebScrape 2", tabName = "webscrape2_tabname")
-                  # )
       )
     }
     # Apollo
